@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
+
+exec docker run \
+  --rm \
+  -it \
+  --platform linux/amd64 \
+  -v "${SCRIPT_DIR}/..:/workspaces/sev-workspace" \
+  -e "HOME=/sev-workspace/.home" \
+  -w "/workspaces/sev-workspace" \
+  --entrypoint "" \
+  sev-workspace \
+  "$@"
