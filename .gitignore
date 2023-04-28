@@ -1,0 +1,7 @@
+**
+!.editorconfig
+!.gitignore
+!.vscode/
+!.vscode/**
+!.devcontainer/
+!.devcontainer/**
