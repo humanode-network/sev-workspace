@@ -1,6 +1,9 @@
 {
   "build": { "dockerfile": "Dockerfile" },
   "runArgs": ["--platform=linux/amd64"],
+  "containerEnv": {
+    "HOME": "${containerWorkspaceFolder}/.home"
+  },
   "forwardPorts": [5000],
   "privileged": true
 }
